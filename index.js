@@ -60,6 +60,7 @@ app.get("/get-expenses", async function (request, response) {
 });
 
 app.delete("/delete-expense/:id", async function (request, response) {
+  const id = req.params.id;
   try {
     const expenseEntry = await Expense.findById(request.params.id);
     if (expenseEntry) {
